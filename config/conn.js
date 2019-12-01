@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
-var url= 'mongodb://localhost:27017/eventsmanagment';
+var url= 'mongodb+srv://event:CXqfk1sGLA39f0pX@cluster0-bqzhq.mongodb.net/test?retryWrites=true&w=majority';
 
 mongoose.connect(url, {
     useNewUrlParser: true
