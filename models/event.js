@@ -1,19 +1,17 @@
-var db=require('../config/db');
+module.exports = (db) => {
 var eventSchema = db.mongoose.Schema({  
     name: String,
-    description:String,
+    summary:String,
     url:String,
     start:Date,
     end:Date,
     changed:Date,
     published:Date,
-    status:String,
-    currency:String,
-    online_event:Boolean,
-    hide_start_date:Boolean,
-    hide_end_date:Boolean
+    status:{type:Boolean,default:false},
+    location:String,
+    price:String
 }, {
     timestamps: true
 });
-
-module.exports = db.mongoose.model('events', eventSchema);
+ db.mongoose.model('Event', eventSchema);
+}

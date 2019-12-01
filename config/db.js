@@ -1,14 +1,18 @@
-var mongoose = require('mongoose');
-var bcrypt   = require('bcrypt-nodejs');
-var url= 'mongodb://localhost:27017/eventsmanagment';
+function saveData(model,params,options){
+    return 'dgsfg';
+}
 
-mongoose.connect(url, {
-    useNewUrlParser: true
-}).then(() => {
-    console.log("Successfully connected to the database");    
-}).catch(err => {
-    console.log('Could not connect to the database. Exiting now...', err);
-    process.exit();
-});
+function chkIfExists(model,params,options){
 
-module.exports = {mongoose,bcrypt};
+}
+
+function updateData(model,params,options){
+
+}
+
+function deleteData(model,params,options){
+
+}
+
+
+module.exports = {saveData,chkIfExists,updateData,deleteData};

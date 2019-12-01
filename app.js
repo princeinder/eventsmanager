@@ -5,12 +5,18 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var app = express();
 const bodyParser = require('body-parser');
+var crypto = require('crypto');
+const db=require('./config/conn');
+const constant = require('./config/constant');
+var jwt=require('jsonwebtoken');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-
+require('./models/event')(db,crypto);
+require('./models/user')(db,crypto,jwt,constant);
+require('./models/booking')(db,crypto);
 require('./routes/api')(app);
 require('./routes/backend')(app);
 
