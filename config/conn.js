@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
-var url= 'mongodb+srv://event:CXqfk1sGLA39f0pX@cluster0-bqzhq.mongodb.net/test?retryWrites=true&w=majority';
+var url= 'mongodb+srv://event:KalN3MqgNL86EpyQ@cluster0-bqzhq.mongodb.net/eventsmanagement?retryWrites=true&w=majority';
 
+mongoose.Promise = global.Promise;
 mongoose.connect(url, {
     useNewUrlParser: true
 }).then(() => {
